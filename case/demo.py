@@ -35,6 +35,7 @@ def randomNum(numList: list):
     @apiGroup 秩序
     @apiName randomNum
     @apiDescription 追加随机数
+    @apiPermission test2
     @apiParam {Object[]} numList 数据数组
     @apiParam {String} numList.id 数据
     @apiParam {String} numList.content 描述

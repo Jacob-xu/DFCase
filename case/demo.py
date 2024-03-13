@@ -8,8 +8,8 @@ def add(a, b):
     @apiName add
     @apiDescription  两数求和，返回计算结果
     @apiPermission test
-    @apiParam {String=111,222} a=111    数字类型
-    @apiParam {String=333} b=333   数字类型
+    @apiParam {String=111,222} a=111    第一个请求参数
+    @apiParam {String=333} b=333   第二个请求参数
     @apiParamExample {json} 请求示例:
     {
          "a": "111",
@@ -37,8 +37,8 @@ def randomNum(numList: list):
     @apiDescription 追加随机数
     @apiPermission test2
     @apiParam {Object[]} numList 数据数组
-    @apiParam {String} numList.id 数据
-    @apiParam {String} numList.content 描述
+    @apiParam {String} numList.id 这里填写id数据
+    @apiParam {String} numList.content 这里填写描述
     @apiParamExample {json} 请求示例：
     {
         "numList": [

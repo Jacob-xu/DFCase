@@ -30,20 +30,20 @@ def add(name, email):
     return dict(code=200, data=sum, msg="success")
 
 
-def randomNum(id: int, numList: list):
+def randomNum(index: int, numList: list):
     """
     @api {post} /randomNum 随机数
     @apiGroup 秩序
     @apiName randomNum
     @apiDescription 追加随机数
     @apiPermission 李四
-    @apiParam {Number} id 序号
+    @apiParam {Number} index 序号
     @apiParam {Object[]} numList 数据数组
     @apiParam {String} numList.id 这里填写id数据
     @apiParam {String} numList.content 这里填写描述
     @apiParamExample {json} 请求示例：
     {
-        "id": 2,
+        "index": 2,
         "numList": [
             {"id":"123","content":"hello"},
             {"id":"456","content":"world"}
@@ -62,5 +62,5 @@ def randomNum(id: int, numList: list):
     """
     for nums in numList:
         nums['id'] = "{}-{}".format(nums['id'], random.randint(1, 10))
-    data = {"id": id, "num": numList}
+    data = {"index": index, "num": numList}
     return dict(code=200, msg="success", data=data)

@@ -43,7 +43,7 @@ def randomNum(id: int, numList: list):
     @apiParam {String} numList.content 这里填写描述
     @apiParamExample {json} 请求示例：
     {
-        "id": 2
+        "id": 2,
         "numList": [
             {"id":"123","content":"hello"},
             {"id":"456","content":"world"}

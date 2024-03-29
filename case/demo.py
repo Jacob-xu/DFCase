@@ -64,3 +64,40 @@ def randomNum(index: int, numList: list):
         nums['id'] = "{}-{}".format(nums['id'], random.randint(1, 10))
     data = {"index": index, "num": numList}
     return dict(code=200, msg="success", data=data)
+
+
+def msDemo(project_id: str, task_id: str, params: list, task_type: int, user: str):
+    """
+    @api {post} /msDemo 调用大黄蜂
+    @apiGroup 大黄蜂
+    @apiName msDemo
+    @apiDescription 调用大黄蜂
+    @apiPermission 王五
+    @apiParam {String=9e6f72b0-0fee-4ce2-aeb8-4c9345edc045} project_id 大黄蜂项目id
+    @apiParam {String=b57c78fb-449a-42bd-90f5-991f4bed6875} task_id 计划/场景id
+    @apiParam {Number=1} task_type 任务类型
+	@apiParam {String} user 用户
+    @apiParam {Object[]} params 大黄蜂入参
+	@apiParam {String} params.p1 参数1
+    @apiParam {String} params.p2 参数2
+    @apiParamExample {json} 请求示例：
+    {
+	"project_id":"9e6f72b0-0fee-4ce2-aeb8-4c9345edc045",
+	"task_id":"b57c78fb-449a-42bd-90f5-991f4bed6875",
+	"task_type": 1,
+	"user":"test_user",
+	"params":{"p1":12,"p2":"eee"}
+	}
+    @apiSuccess (200) {Number} code 服务器码
+    @apiSuccess (200) {String} data 造数成功返回相关的数据
+    @apiSuccess (200) {String} msg 提示语
+    @apiSuccessExample {json} 返回示例:
+    {
+        "code": 200,
+        "msg": "请求成功",
+        "data": {}
+    }
+
+    """
+    data = {"project_id": project_id, "task_id": task_id, "task_type":task_type, "params": params, "user": user}
+    return dict(code=200, msg="success", data=data)

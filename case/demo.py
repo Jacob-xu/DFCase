@@ -9,7 +9,7 @@ def add(name, email):
     @apiDescription  拼接字符串
     @apiPermission 张三
     @apiParam {String=zhangsan,lisi} name=zhangsan 用户名
-    @apiParam {String=222@bigo.com} email=222@bigo.sg 邮箱
+    @apiParam {String} email=222@bigo.sg 邮箱
     @apiParamExample {json} 请求示例:
     {
          "name": "zhangsan",
@@ -39,7 +39,7 @@ def randomNum(index: int, numList: list):
     @apiPermission 李四
     @apiParam {Number} index 序号
     @apiParam {Object[]} numList 数据数组
-    @apiParam {String} numList.id 这里填写id数据
+    @apiParam {String=22,333,444} numList.id 这里填写id数据
     @apiParam {String} numList.content 这里填写描述
     @apiParamExample {json} 请求示例：
     {

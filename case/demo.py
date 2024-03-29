@@ -77,7 +77,7 @@ def msDemo(project_id: str, task_id: str, params: list, task_type: int, user: st
     @apiParam {String=b57c78fb-449a-42bd-90f5-991f4bed6875} task_id 计划/场景id
     @apiParam {Number=1} task_type 任务类型
 	@apiParam {String} user 用户
-    @apiParam {Object[]} params 大黄蜂入参
+    @apiParam {Object} params 大黄蜂入参
 	@apiParam {String} params.p1 参数1
     @apiParam {String} params.p2 参数2
     @apiParamExample {json} 请求示例：

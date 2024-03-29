@@ -37,7 +37,7 @@ def randomNum(index: int, numList: list):
     @apiName randomNum
     @apiDescription 追加随机数
     @apiPermission 李四
-    @apiParam {Number} index 序号
+    @apiParam {Number=666} index 序号
     @apiParam {Object[]} numList 数据数组
     @apiParam {String=22,333,444} numList.id 这里填写id数据
     @apiParam {String} numList.content 这里填写描述

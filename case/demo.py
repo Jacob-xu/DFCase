@@ -8,11 +8,11 @@ def add(name, email):
     @apiName add
     @apiDescription  拼接字符串
     @apiPermission 张三
-    @apiParam {String=zhangsan,lisi} name=zhangsan 用户名
+    @apiParam {String=张三,李四} name=张三 用户名
     @apiParam {String} email=222@bigo.sg 邮箱
     @apiParamExample {json} 请求示例:
     {
-         "name": "zhangsan",
+         "name": "张三",
          "email": "222@bigo.sg"
       }
     @apiSuccess (200) {Number} code 服务器码

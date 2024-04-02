@@ -4,7 +4,7 @@ import random
 def add(name, email):
     """
     @api {post} /add 拼接字符串
-    @apiGroup 商业化
+    @apiGroup 商业化-SSP
     @apiName add
     @apiDescription  拼接字符串
     @apiPermission 张三
@@ -76,18 +76,18 @@ def msDemo(project_id: str, task_id: str, params: list, task_type: int, user: st
     @apiParam {String=9e6f72b0-0fee-4ce2-aeb8-4c9345edc045} project_id 大黄蜂项目id
     @apiParam {String=b57c78fb-449a-42bd-90f5-991f4bed6875} task_id 计划/场景id
     @apiParam {Number=1} task_type 任务类型
-	@apiParam {String} user 用户
+    @apiParam {String} user 用户
     @apiParam {Object} params 大黄蜂入参
-	@apiParam {String} params.p1 参数1
+    @apiParam {Number} params.p1 参数1
     @apiParam {String} params.p2 参数2
     @apiParamExample {json} 请求示例：
     {
-	"project_id":"9e6f72b0-0fee-4ce2-aeb8-4c9345edc045",
-	"task_id":"b57c78fb-449a-42bd-90f5-991f4bed6875",
-	"task_type": 1,
-	"user":"test_user",
-	"params":{"p1":12,"p2":"eee"}
-	}
+    "project_id":"9e6f72b0-0fee-4ce2-aeb8-4c9345edc045",
+    "task_id":"b57c78fb-449a-42bd-90f5-991f4bed6875",
+    "task_type": 1,
+    "user":"test_user",
+    "params":{"p1":12,"p2":"eee"}
+    }
     @apiSuccess (200) {Number} code 服务器码
     @apiSuccess (200) {String} data 造数成功返回相关的数据
     @apiSuccess (200) {String} msg 提示语
@@ -99,5 +99,38 @@ def msDemo(project_id: str, task_id: str, params: list, task_type: int, user: st
     }
 
     """
-    data = {"project_id": project_id, "task_id": task_id, "task_type":task_type, "params": params, "user": user}
+    data = {"project_id": project_id, "task_id": task_id, "task_type": task_type, "params": params, "user": user}
     return dict(code=200, msg="success", data=data)
+
+
+def hashNum(adset_id: int):
+    """
+    @api {post} /hashNum 广告组实验的hash值
+    @apiGroup 商业化-DSP
+    @apiName hashNum
+    @apiDescription 计算得到目标广告组的hash值
+    @apiPermission 王五
+    @apiParam {Number} adset_id 广告组id
+    @apiParamExample {json} 请求示例：
+    {
+    "adset_id":44387428390149888
+    }
+    @apiSuccess (200) {Number} code 服务器码
+    @apiSuccess (200) {String} data 造数成功返回相关的数据
+    @apiSuccess (200) {String} msg 提示语
+    @apiSuccessExample {json} 返回示例:
+    {
+        "code": 200,
+        "msg": "请求成功",
+        "data": {}
+    }
+
+    """
+    FLAGS_dsp_ad_abtest_hash_seed = 0x1234
+
+    num = adset_id >> 15
+    hash_num = num ^ (num >> 3) ^ (num >> 1)
+    slot = (hash_num ^ FLAGS_dsp_ad_abtest_hash_seed) % 100
+    print("该广告组hash值:", slot)
+
+    return dict(code=200, msg="success", data=slot)

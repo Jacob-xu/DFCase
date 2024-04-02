@@ -128,6 +128,7 @@ def hashNum(adset_id: int):
     """
     FLAGS_dsp_ad_abtest_hash_seed = 0x1234
 
+    adset_id = int(adset_id)
     num = adset_id >> 15
     hash_num = num ^ (num >> 3) ^ (num >> 1)
     slot = (hash_num ^ FLAGS_dsp_ad_abtest_hash_seed) % 100

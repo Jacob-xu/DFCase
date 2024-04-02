@@ -69,7 +69,7 @@ def randomNum(index: int, numList: list):
 def msDemo(project_id: str, task_id: str, params: list, task_type: int, user: str):
     """
     @api {post} /msDemo 调用大黄蜂
-    @apiGroup 大黄蜂
+    @apiGroup Hello-通用
     @apiName msDemo
     @apiDescription 调用大黄蜂
     @apiPermission 王五

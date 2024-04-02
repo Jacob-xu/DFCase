@@ -1,5 +1,5 @@
 import random
-
+from hash_num import hash_adset
 
 def add(name, email):
     """
@@ -126,12 +126,5 @@ def hashNum(adset_id: int):
     }
 
     """
-    FLAGS_dsp_ad_abtest_hash_seed = 0x1234
-
-    adset_id = int(adset_id)
-    num = adset_id >> 15
-    hash_num = num ^ (num >> 3) ^ (num >> 1)
-    slot = (hash_num ^ FLAGS_dsp_ad_abtest_hash_seed) % 100
-    print("该广告组hash值:", slot)
-
-    return dict(code=200, msg="success", data=slot)
+    data = hash_adset(adset_id)
+    return dict(code=200, msg="success", data=data)

@@ -1,5 +1,6 @@
 import random
-from hash_num import hash_adset
+from .hash_num import hash_adset
+
 
 def add(name, email):
     """

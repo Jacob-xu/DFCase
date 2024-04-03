@@ -106,10 +106,10 @@ def msDemo(project_id: str, task_id: str, params: list, task_type: int, user: st
 
 def hashNum(adset_id: int):
     """
-    @api {post} /hashNum 外部应用示例
+    @api {post} /hashNum 外部引用示例
     @apiGroup 商业化-DSP
     @apiName hashNum
-    @apiDescription 外部应用示例
+    @apiDescription 外部引用示例
     @apiPermission 王五
     @apiParam {Number} adset_id 广告组id
     @apiParamExample {json} 请求示例：

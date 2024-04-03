@@ -106,10 +106,10 @@ def msDemo(project_id: str, task_id: str, params: list, task_type: int, user: st
 
 def hashNum(adset_id: int):
     """
-    @api {post} /hashNum 广告组实验的hash值
+    @api {post} /hashNum 外部应用示例
     @apiGroup 商业化-DSP
     @apiName hashNum
-    @apiDescription 计算得到目标广告组的hash值
+    @apiDescription 外部应用示例
     @apiPermission 王五
     @apiParam {Number} adset_id 广告组id
     @apiParamExample {json} 请求示例：

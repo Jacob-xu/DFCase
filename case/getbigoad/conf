@@ -1,0 +1,183 @@
+# request_base
+config_base:
+    headers:  {
+        'Content-Type': 'application/json',
+        'X-Real-IP': '192.168.1.255',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36 Edg/89.0.774.76'
+    }
+
+    body : {
+            'ori': {
+                'source_id': '100004',
+                'source_type': 0,
+                'access_type': 0,
+                'publisher_type': 0,
+                'identity_type': 0,
+                'pkg_name': '',
+                'pkg_ver': '2.0.0',
+                'pkg_vc': 320,
+                'pkg_ch': 'gp',
+                'pkg_sver': '1.1.123',
+                'os': 'android',
+                'os_ver': '9.1',
+                'os_lang': 'en',
+                'vendor': 'samsung',
+                'model': 'SM-G610M',
+                'isp': 'aircel',
+                'lan': 'en',
+                'net': '3g',
+                'guid': '',
+                'timezone': 'GMT+8:00',
+                'country': '',
+                'state': 'state',
+                'city': 'city',
+                'uid': 'test_uid',
+                'sdk_ver': '2.0.0',
+                'sdk_vc': 2230,
+                'gaid': '',
+                'ip': '192.168.1.1',
+                'ipv6': '2a00:1fa4:ffff:ffff:ffff:ffff:ffff:ffff',
+                'slot': '',
+                'placement_id': '',
+                'user_agent': 'Mozilla/5.0 (iPad)',
+                'preview': 0,
+                'sdk_function_cfg': {'16': 1, '17': 1, '14': 1, '15': 1, '40': 1, '41': 1, '42': 1, '43': 1, '44': 1, '45': 1, '46': 1, '47': 1, '48': 1, '49': 1},
+                'support_playable_ad': 0,
+                'playable_ad_w': 0,
+                'playable_ad_h': 0
+            },
+            'types': ''
+        }
+
+
+    body_attr: {
+        "adId": 'account_id',
+        # adid传的应该是account_id
+        "adsetId": 'adset_id',
+        "attributed_bigo": "1",
+        "adxType": "1",
+        "androidId": "3",
+        "appId": tgt_pkg_name,
+        "appKey": "AppsFlyer_MQxCp4",
+        "appName": tgt_pkg_name,
+        "appVersionName": "2.5.1",
+        "campaignId": series_id,
+        "carrier": "test1",
+        "city": "city1",
+        "clickTs": event_time,
+        "countryCode": "CN",
+        "currency": "USD",
+        "deviceBrand": "xiaomi",
+        "deviceId": "1584334840467-1818173266735324326",
+        "deviceModel": "Redmi%20Y2",
+        "eventName": "N%20A",
+        "eventValue": "N%20A",
+        "gaid": gaid,
+        "ad_ext": '',
+        "gpReferrerClickTs": 0,
+        "gpReferrerInstallTs": event_time + 1,
+        "idfa": "test121210",
+        "ip": "157.34.77.186",
+        "ipv6": "",
+        "language": "English",
+        "mac": "",
+        "mappedIae": mappedIae,
+        "matchType": "uid",
+        "md5AndroidId": "",
+        "md5Gaid": "ceeb92ae76b1c3433ae6fe38471fdf2a",
+        "md5Idfa": "ceeb92ae76b1c3433ae6fe38471fdf2a",
+        "md5Mac": "d41d8cd98f00b204e9800998ecf8427e",
+        "monetary": 12,
+        "origMonetary": 13,
+        "osVersion": "9",
+        "placeId": "100000",
+        "requestTimestamp": event_time + 3,
+        "sdkVersion": "v4.8.18",
+        "shaAndroidId": "",
+        "shaGaid": "7d14354800ea875b46271d802f680f3db5f312a9",
+        "shaIdfa": "7d14354800ea875b46271d802f680f3db5f312a9",
+        "shaMac": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+        "sid": sid,
+        "sign": "123",
+        "trackingDisable": 2,
+        "useWifi": 2,
+        "userAgent": "Dalvik%2F2.1.0%20%28Linux%3B%20U%3B%20Android%209%3B%20Redmi%20Y2%20MIUI%2FV11.0.3.0.PEFMIXM%29",
+        "vendorId": "",
+        "is-reattr": 0,
+        "is-reengage": "0",
+    }
+
+
+# ocpc广告
+# config_ocpc:
+config_ocpc广告:
+    country: "lc"
+
+# 图文广告
+# config_native_img:
+config_图文广告:
+    country: "in"
+
+# 视频广告
+# config_native_video:
+config_视频广告:
+    country: "bd"
+
+
+# 访问量+应用+图文广告
+config_访问量+应用+图文广告:
+    country: "de"
+    net: "wifi"
+
+# 访问量+网页+视频广告
+config_访问量+网页+视频广告:
+    country: "de"
+    net: "5g"
+
+# 应用安装量+安装+图文
+config_应用安装量+安装+图文:
+    country: "ae"
+    net: "5g"
+
+# 应用安装量+安装+自动优化+视频
+config_应用安装量+安装+自动优化+视频:
+    country: "de"
+    net: "2g"
+
+# 应用安装量+安装+自定义出价+图文
+config_应用安装量+安装+自定义出价+图文:
+    country: "de"
+    net: "3g"
+
+# 应用安装量+应用内事件+优化转化+视频
+config_应用安装量+应用内事件+优化转化+视频:
+    country: "de"
+    net: "4g"
+
+# 应用互动+安装+无深层目标+视频
+config_应用安装量+应用内事件+优化转化+视频:
+    country: "ae"
+    net: "4g"
+
+# 应用互动+安装+自动优化+图文
+config_应用互动+安装+自动优化+图文:
+    country: "ae"
+    net: "wifi"
+
+# 应用互动+安装+自定义出价+视频
+config_应用互动+安装+自定义出价+视频:
+    country: "ae"
+    net: "2g"
+
+# 应用互动+应用内事件+图文
+config_应用互动+应用内事件+图文:
+    country: "ae"
+    net: "3g"
+
+
+# base_slot:
+config_base_slot:
+    placement_id: "100016-100638-101607"
+    slot: "100016-100638"
+    strategy_id: "26578"
+    pkg_name: "com.bigotest.ads"

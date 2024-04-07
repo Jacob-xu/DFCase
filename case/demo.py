@@ -1,5 +1,4 @@
 import random
-from .hash_num import hash_adset
 
 
 def add(name, email):
@@ -127,5 +126,48 @@ def hashNum(adset_id: int):
     }
 
     """
+    from hash_num import hash_adset
+
     data = hash_adset(adset_id)
+    return dict(code=200, msg="success", data=data)
+
+
+def getBigoAd(choose_slot, choose_country, choose_type, gaid, impl, click, attr, mappedIae):
+    """
+    @api {post} /GetBigoAd 请求广告
+    @apiGroup 商业化-DSP
+    @apiName GetBigoAd
+    @apiDescription 请求广告
+    @apiPermission yuanxu
+    @apiParam {String=base_slot} choose_slot 请求广告位
+    @apiParam {String=ocpc广告,图文广告,视频广告,访问量+应用+图文广告,访问量+网页+视频广告,
+    应用安装量+安装+图文,应用安装量+安装+自动优化+视频,应用安装量+安装+自定义出价+图文,应用安装量+应用内事件+优化转化+视频,应用互动+安装+无深层目标+视频,应用互动+安装+自动优化+图文,
+    应用互动+安装+自定义出价+视频,应用互动+应用内事件+图文,} choose_country 广告选择
+    @apiParam {String=native_img,native_video,banner} choose_type 广告展示形式
+    @apiParam {String} gaid gaid
+    @apiParam {Boolean=True,False} impl 是否触发曝光
+    @apiParam {Boolean=True,False} click 是否触发点击
+    @apiParam {Boolean=True,False} attr 是否触发归因
+    @apiParam {String} mappedIae 归因事件
+    @apiParam {Number} choose_slot 广告组id
+    @apiParamExample {json} 请求示例：
+    {
+    "choose_slot":"base_slot",
+    "choose_country": "ocpc广告",
+    "choose_type": "native_img",
+    "gaid": "test0408",
+    "impl": True,
+    "click": True,
+    "attr": True,
+    "mappedIae": "app_install"
+    }
+    @apiSuccess (200) {Number} code 服务器码
+    @apiSuccess (200) {String} data 造数成功返回相关的数据
+    @apiSuccess (200) {String} msg 提示语
+    @apiSuccessExample {json} 返回示例:
+    { "code": 200, "msg": "请求成功", "data": {} }
+
+    """
+    from getbigoad.getbigoad_flow import GetBigoAdUserChoose
+    data = GetBigoAdUserChoose(choose_slot, choose_country, choose_type, gaid, impl, click, attr, mappedIae)
     return dict(code=200, msg="success", data=data)

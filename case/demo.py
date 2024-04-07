@@ -132,7 +132,7 @@ def hashNum(adset_id: int):
     return dict(code=200, msg="success", data=data)
 
 
-def getBigoAd(choose_slot, choose_country, choose_type, gaid, impl, click, attr, mappedIae):
+def GetBigoAd(choose_slot, choose_country, choose_type, gaid, impl, click, attr, mappedIae):
     """
     @api {post} /GetBigoAd 请求广告
     @apiGroup 商业化-DSP

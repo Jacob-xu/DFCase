@@ -5,7 +5,7 @@ import os
 
 sys.path.append(os.getcwd())
 
-yaml_file = sys.path[0] + '/getbigoad/conf'
+yaml_file = os.path.dirname(os.path.abspath(__file__)) + '/conf'
 file = open(yaml_file, 'r', encoding="utf-8")
 file_data = yaml.load(file.read(), Loader=yaml.FullLoader)
 

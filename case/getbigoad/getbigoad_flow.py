@@ -161,9 +161,9 @@ def AnalyResult(result, gaid, impl, click, attr, mappedIae):
         except:
             pass
 
-        if impl or click == 'True':
+        if impl or click == True:
             SendTracker(source_json)
-        if attr == True:
+        if attr:
             Attribution(source_json, mappedIae)
 
     return source_json
@@ -207,16 +207,16 @@ def SendTracker(source_json):
     bigo_tracker_click = source_json['bigo_tracker_click']
 
     if impl:
-        impl_delay = random.randint(1, 5)
-        time.sleep(impl_delay)
-        print("展示延迟:", impl_delay)
+        # impl_delay = random.randint(1, 5)
+        # time.sleep(impl_delay)
+        # print("展示延迟:", impl_delay)
         response_impls = requests.request("GET", bigo_tracker_impl, verify=False)
         print('=' * 10)
         print("展示追踪链请求结果:", response_impls.json())
     if click:
-        click_delay = random.randint(1, 5)
-        time.sleep(click_delay)
-        print("点击延迟:", click_delay)
+        # click_delay = random.randint(1, 5)
+        # time.sleep(click_delay)
+        # print("点击延迟:", click_delay)
         response_click = requests.request("GET", bigo_tracker_click, verify=False)
         print('=' * 10)
         print("点击追踪链请求结果:", response_click.json())
